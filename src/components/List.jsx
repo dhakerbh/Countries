@@ -13,9 +13,15 @@ const List = ({ countries }) => {
               </div>
               <div className="details">
                 <h2>{common}</h2>
-                <p>Population: {population.toLocaleString("en-EN")}</p>
-                <p>Region: {region}</p>
-                <p>Capital: {capital}</p>
+                <p>
+                  Population:<span> {population.toLocaleString("en-EN")}</span>
+                </p>
+                <p>
+                  Region:<span>{region}</span>{" "}
+                </p>
+                <p>
+                  Capital: <span>{capital}</span>
+                </p>
               </div>
             </div>
           );

@@ -1,12 +1,24 @@
+:root {
+  --body_background: hsl(0, 0%, 95%);
+  --body_color: hsl(200, 15%, 8%);
+  --element: hsl(0, 0%, 100%);
+}
+[data-theme="dark"] {
+  --body_background: hsl(207, 26%, 17%);
+  --body_color: hsl(0, 0%, 100%);
+  --element: hsl(209, 23%, 22%);
+}
+
 body {
+  background-color: var(--body_background);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--body_color);
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -17,9 +29,10 @@ code {
   align-items: center;
   justify-content: space-between;
   padding: 0 50px;
+  background-color: var(--element);
 }
 .cont {
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--body_background);
 }
 form {
   display: flex;
@@ -31,7 +44,10 @@ form {
     width: 300px;
     border: 0;
     border-radius: 7px;
-    filter: drop-shadow(0 0 10px #0000002f);
+    background-color: var(--element);
+    &::placeholder {
+      color: var(--body_color);
+    }
   }
 }
 .country-cont {
@@ -49,11 +65,14 @@ form {
   }
   p {
     max-width: 200px;
+    font-weight: 600;
+    span {
+      font-weight: 350;
+    }
   }
 }
 .country {
-  filter: drop-shadow(0 0 15px #0000002f);
-  background-color: white;
+  background-color: var(--element);
   border-radius: 10px;
   overflow: hidden;
   .details {
